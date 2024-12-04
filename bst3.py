@@ -93,6 +93,20 @@ class BST:
         else:
             return self._minValueNode(node.left)
 
+
+def level_order(root):
+    if root is None:
+        return
+    queue = []
+    queue.append(root)
+    while queue:
+        node = queue.pop(0)
+        print(node.val, end=' ')
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
 # Example usage
 bst = BST()
 bst.addNode(50)
